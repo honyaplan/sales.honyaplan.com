@@ -1,9 +1,8 @@
-
 <!doctype html>
 <html lang="ja">
 <head>
   <meta charset="utf-8" />
-<meta name="robots" content="noindex, nofollow">
+  <meta name="robots" content="noindex, nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>特定商取引法に基づく表記｜sales.honyaplan.com</title>
   <style>
@@ -12,6 +11,7 @@
     dt { font-weight:bold; margin-top:1em; }
     dd { margin:0 0 1em 0.5em; }
     a { color:#111; }
+    canvas { display:block; }
   </style>
 </head>
 <body>
@@ -21,7 +21,10 @@
     <dd>ホニャプラン販売</dd>
 
     <dt>運営責任者</dt>
-    <dd>𣂺添吉記</dd>
+    <dd>
+      <!-- Canvasで「𣂺添吉記」を描画 -->
+      <canvas id="person" width="400" height="80" aria-hidden="true"></canvas>
+    </dd>
 
     <dt>所在地</dt>
     <dd>〒400-0017</dd>
@@ -54,6 +57,18 @@
     <dd>1日単位（複数日レンタルは別途相談）</dd>
   </dl>
 
-  <p><a href="index.htm">← レンタルページに戻る</a></p>
+  <p><a href="index.html">← レンタルページに戻る</a></p>
+
+  <script>
+    // 表示したい異体字文字列（𣂺添吉記）
+    const text = "𣂺添吉記";
+    const c = document.getElementById("person");
+    const ctx = c.getContext("2d");
+    ctx.fillStyle = "#111";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.font = "700 40px 'Yu Mincho','Hiragino Mincho ProN','Noto Serif JP',serif";
+    ctx.fillText(text, c.width/2, c.height/2);
+  </script>
 </body>
 </html>
