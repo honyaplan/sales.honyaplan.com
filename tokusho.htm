@@ -2,8 +2,8 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8" />
-  <meta name="robots" content="noindex, nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow">
   <title>特定商取引法に基づく表記｜sales.honyaplan.com</title>
   <style>
     body { font-family: system-ui, sans-serif; line-height: 1.6; margin:0; padding:20px; color:#111; max-width:760px; }
@@ -21,10 +21,7 @@
     <dd>ホニャプラン販売</dd>
 
     <dt>運営責任者</dt>
-    <dd>
-      <!-- Canvasで「𣂺添吉記」を描画 -->
-      <canvas id="person" width="400" height="80" aria-hidden="true"></canvas>
-    </dd>
+    <dd><canvas id="person" width="420" height="84" aria-hidden="true"></canvas></dd>
 
     <dt>所在地</dt>
     <dd>〒400-0017</dd>
@@ -60,15 +57,22 @@
   <p><a href="index.html">← レンタルページに戻る</a></p>
 
   <script>
-    // 表示したい異体字文字列（𣂺添吉記）
-    const text = "𣂺添吉記";
-    const c = document.getElementById("person");
-    const ctx = c.getContext("2d");
-    ctx.fillStyle = "#111";
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    ctx.font = "700 40px 'Yu Mincho','Hiragino Mincho ProN','Noto Serif JP',serif";
-    ctx.fillText(text, c.width/2, c.height/2);
+    // 「𣂺添吉記」をUTF-8でBase64化した文字列（検索よけのため直接は書かない）
+    // Base64: 8KOCuua3u+WQieiomA==
+    (function() {
+      const b64 = "8KOCuua3u+WQieiomA==";
+      // UTF-8デコード（escapeは簡便のため。厳密にはTextDecoderでもOK）
+      const text = decodeURIComponent(escape(atob(b64)));
+      const c = document.getElementById("person");
+      const ctx = c.getContext("2d");
+      ctx.fillStyle = "#111";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.font = "700 40px 'Yu Mincho','Hiragino Mincho ProN','Noto Serif JP',serif";
+      ctx.shadowColor = "rgba(0,0,0,.08)";
+      ctx.shadowBlur = 2;
+      ctx.fillText(text, c.width/2, c.height/2);
+    })();
   </script>
 </body>
 </html>
