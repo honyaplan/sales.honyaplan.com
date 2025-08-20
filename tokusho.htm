@@ -21,7 +21,7 @@
     <dd>ホニャプラン販売</dd>
 
     <dt>運営責任者</dt>
-    <dd><canvas id="person" width="100" height="24" aria-hidden="true"></canvas></dd>
+    <dd><canvas id="person" width="100" height="34" aria-hidden="true"></canvas></dd>
 
     <dt>所在地</dt>
     <dd>〒400-0017</dd>
@@ -57,11 +57,8 @@
   <p><a href="index.html">← レンタルページに戻る</a></p>
 
   <script>
-    // 「𣂺添吉記」をUTF-8でBase64化した文字列（検索よけのため直接は書かない）
-    // Base64: 8KOCuua3u+WQieiomA==
     (function() {
-      const b64 = "8KOCuua3u+WQieiomA==";
-      // UTF-8デコード（escapeは簡便のため。厳密にはTextDecoderでもOK）
+    const b64 = "5paw5re75Y2V5ZCI";  // ← 新しいBase64文字列      /
       const text = decodeURIComponent(escape(atob(b64)));
       const c = document.getElementById("person");
       const ctx = c.getContext("2d");
