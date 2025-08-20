@@ -62,9 +62,7 @@
       const text = decodeURIComponent(escape(atob(b64)));
       const c = document.getElementById("person");
       const ctx = c.getContext("2d");
-      ctx.fillStyle = "#111";
-      ctx.textBaseline = "middle";
-      ctx.font = "700 16px 'Yu Mincho','Hiragino Mincho ProN','Noto Serif JP',serif";      ctx.shadowColor = "rgba(0,0,0,.08)";
+      ctx.font = "700 16px 'Yu Mincho','Hiragino Mincho ProN','Noto Serif JP',serif"; 
       ctx.fillText(text, c.width/2, c.height/2);
     })();
   </script>
