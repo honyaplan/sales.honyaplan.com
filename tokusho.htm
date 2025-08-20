@@ -55,16 +55,35 @@
   </dl>
 
   <p><a href="index.html">← レンタルページに戻る</a></p>
+<script>
+(function() {
+  const b64 = "5paw5re75Y2V5ZCI"; 
+  const text = decodeURIComponent(escape(atob(b64)));
 
-  <script>
-    (function() {
-    const b64 = "5paw5re75Y2V5ZCI";  // ← 新しいBase64文字列      /
-      const text = decodeURIComponent(escape(atob(b64)));
-      const c = document.getElementById("person");
-      const ctx = c.getContext("2d");
-      ctx.font = "700 16px 'Yu Mincho','Hiragino Mincho ProN','Noto Serif JP',serif"; 
-      ctx.fillText(text, c.width/2, c.height/2);
-    })();
-  </script>
+  const c = document.getElementById("person");
+  const ctx = c.getContext("2d");
+
+  // ===== HiDPI対応（内部解像度を上げる）=====
+  const cssW = c.getAttribute("width") ? parseInt(c.getAttribute("width"), 10) : c.clientWidth;
+  const cssH = c.getAttribute("height") ? parseInt(c.getAttribute("height"), 10) : c.clientHeight;
+  const dpr = window.devicePixelRatio || 1;
+
+  // 内部ピクセルをdpr倍、見た目サイズは据え置き
+  c.width = Math.max(1, Math.floor(cssW * dpr));
+  c.height = Math.max(1, Math.floor(cssH * dpr));
+  c.style.width = cssW + "px";
+  c.style.height = cssH + "px";
+  ctx.scale(dpr, dpr);
+
+  // ===== テキスト描画 =====
+  ctx.fillStyle = "#111";
+  ctx.textAlign = "left";         // 左寄せが一番コントロールしやすい
+  ctx.textBaseline = "top";       // 行の上端基準で揃える
+  ctx.font = "700 16px 'Yu Mincho','Hiragino Mincho ProN','Noto Serif JP',serif";
+
+  // 影はにじみの原因なのでオフ
+  // ctx.shadowColor = "transparent";
+  // ctx.shadowBlur =
+
 </body>
 </html>
