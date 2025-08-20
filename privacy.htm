@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow">
+  <title>プライバシーポリシー｜sales.honyaplan.com</title>
+  <style>
+    body { font-family: system-ui, sans-serif; line-height: 1.6; margin:0; padding:20px; color:#111; max-width:760px; }
+    h1 { font-size:1.6rem; margin-bottom:1em; }
+    h2 { margin-top:1.2em; font-size:1.2rem; }
+    p, ul { margin-bottom:1em; }
+    a { color:#111; }
+    .operator { margin: 1em 0; }
+    canvas { display:inline-block; vertical-align:middle; }
+  </style>
+</head>
+<body>
+  <h1>プライバシーポリシー</h1>
+
+  <p>ホニャプラン（以下「当社」）は、お客様からお預かりする個人情報を適切に取り扱い、保護することを重要な責務と考えております。本ポリシーに従い、個人情報を管理いたします。</p>
+
+  <div class="operator">
+    <strong>運営者：</strong>
+    <canvas id="operator" width="210" height="40" aria-hidden="true"></canvas>
+  </div>
+
+  <h2>1. 個人情報の利用目的</h2>
+  <ul>
+    <li>レンタル・商品の提供、配送、サポートのため</li>
+    <li>決済処理、請求、連絡対応のため</li>
+    <li>お問い合わせへの回答のため</li>
+    <li>法令遵守および契約上の義務を果たすため</li>
+  </ul>
+
+  <h2>2. 個人情報の第三者提供</h2>
+  <p>当社は、法令に基づく場合を除き、お客様の同意なく第三者に個人情報を提供することはありません。</p>
+
+  <h2>3. 個人情報の管理</h2>
+  <p>当社は、個人情報を安全に管理し、不正アクセス・改ざん・漏洩などを防ぐための合理的な措置を講じます。</p>
+
+  <h2>4. 外部サービスの利用</h2>
+  <p>当社は、決済処理に Stripe を利用しています。決済情報は Stripe のシステム上で安全に処理され、当社はクレジットカード番号等を保持しません。</p>
+
+  <h2>5. お問い合わせ窓口</h2>
+  <p>
+    ホニャプラン販売<br>
+    sales@honyaplan.com
+  </p>
+
+  <h2>6. プライバシーポリシーの改定</h2>
+  <p>本ポリシーの内容は、必要に応じて変更することがあります。変更後は本ページにて告知いたします。</p>
+
+  <p><a href="index.html">← レンタルページに戻る</a></p>
+
+  <script>
+    // 「𣂺添吉記」Base64（UTF-8）
+    (function() {
+      const b64 = "8KOCuua3u+WQieiomA==";
+      const text = decodeURIComponent(escape(atob(b64)));
+      const c = document.getElementById("operator");
+      const ctx = c.getContext("2d");
+      ctx.fillStyle = "#111";
+      ctx.textAlign = "left";
+      ctx.textBaseline = "middle";
+      ctx.font = "700 24px 'Yu Mincho','Hiragino Mincho ProN','Noto Serif JP',serif";
+      ctx.fillText(text, 4, c.height/2);
+    })();
+  </script>
+</body>
+</html>
